@@ -32,6 +32,12 @@ requirements:
   run:
     - astropy
     - python
+    - setuptools
+    - numpy
+    - scipy
+    - matplotlib
+    - pyqt
+    - h5py
 
 test:
   imports:
