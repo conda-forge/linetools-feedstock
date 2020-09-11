@@ -62,7 +62,7 @@ test:
 
 about:
   home: http://linetools.readthedocs.org/
-  license: BSD-3-clause
+  license: BSD-3-Clause
   license_family: BSD
   license_file: licenses/LICENSE.rst
   summary: A package for analysing absorption and emission lines in 1d spectra, especially galaxy and quasar spectra.
