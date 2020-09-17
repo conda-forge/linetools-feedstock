@@ -35,7 +35,7 @@ requirements:
     - setuptools
     - numpy
     - scipy
-    - matplotlib
+    - matplotlib-base
     - pyqt
     - h5py
 
