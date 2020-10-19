@@ -5,11 +5,13 @@ Home: http://linetools.readthedocs.org/
 
 Package license: BSD-3-Clause
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/linetools-feedstock/blob/master/LICENSE.txt)
 
 Summary: A package for analysing absorption and emission lines in 1d spectra, especially galaxy and quasar spectra.
 
+Development: https://github.com/linetools/linetools
 
+Documentation: http://linetools.readthedocs.org/
 
 Current build status
 ====================
