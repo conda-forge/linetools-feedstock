@@ -1,5 +1,5 @@
 {% set name = "linetools" %}
-{% set version = "0.3.dev2199" %}
+{% set version = "0.3.dev2206" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: bf4179c8762006fe07bb94c5aa7ad300c6778e8f985d58f5830cb6d77f55e4ed
+  sha256: 31c353a20aa8567aee57d19804557e34292ecc9f3d250c92f40495866c387a36
   patches:
     - setup.cfg.patch
 
