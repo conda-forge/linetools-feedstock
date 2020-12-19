@@ -1,5 +1,5 @@
 {% set name = "linetools" %}
-{% set version = "0.3.dev2206" %}
+{% set version = "0.3.dev2227" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 31c353a20aa8567aee57d19804557e34292ecc9f3d250c92f40495866c387a36
+  sha256: 1ba312c9949f7cac28fcec464484a69c3cbb7261de0b21155178c044a2a47f51
   patches:
     - setup.cfg.patch
 
@@ -36,7 +36,7 @@ requirements:
     - numpy
     - scipy
     - matplotlib-base
-    - pyqt
+    - pyside2
     - h5py
 
 test:
