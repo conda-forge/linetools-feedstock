@@ -1,5 +1,5 @@
 {% set name = "linetools" %}
-{% set version = "0.3.dev2227" %}
+{% set version = "0.3.dev2231" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 1ba312c9949f7cac28fcec464484a69c3cbb7261de0b21155178c044a2a47f51
+  sha256: 2da2c26bd0adf466add95372cf4784224ea05a293f1ff0b1a9db3962e9764dac
   patches:
     - setup.cfg.patch
 
 build:
-  number: 1
+  number: 0
   entry_points:
     - lt_absline = linetools.scripts.lt_absline:main
     - lt_line = linetools.scripts.lt_line:main
@@ -36,7 +36,7 @@ requirements:
     - numpy
     - scipy
     - matplotlib-base
-    - pyside2
+    - qtpy
     - h5py
 
 test:
