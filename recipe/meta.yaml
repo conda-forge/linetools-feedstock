@@ -27,16 +27,18 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python >=3.8
+    - setuptools_scm >=5
   run:
-    - astropy
-    - python >=3.6
-    - setuptools
-    - numpy
-    - scipy
-    - matplotlib-base
-    - qtpy
-    - h5py
+    - python >=3.8
+    - numpy >=1.20.0
+    - astropy >=5.2.1
+    - scipy >=1.6
+    - h5py >=3.7
+    - matplotlib-base >=3.3
+    - pyyaml >=5.1
+    - ipython >=7.10.0
+    - qtpy >=1.9
 
 test:
   imports:
