@@ -1,19 +1,17 @@
 {% set name = "linetools" %}
-{% set version = "0.3.dev2231" %}
+{% set version = "0.3.1" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 2da2c26bd0adf466add95372cf4784224ea05a293f1ff0b1a9db3962e9764dac
-  patches:
-    - setup.cfg.patch
+  sha256: d2792647c4451b9d0f83e9d6cf09b59292ad8d97168d366be7d9496094c7c5d2
 
 build:
   noarch: python
-  number: 1
+  number: 0
   entry_points:
     - lt_absline = linetools.scripts.lt_absline:main
     - lt_line = linetools.scripts.lt_line:main
@@ -24,23 +22,27 @@ build:
     - lt_radec = linetools.scripts.lt_radec:main
     - lt_solabnd = linetools.scripts.lt_solabnd:main
     - lt_get_COS_LP = linetools.scripts.lt_get_COS_LP:main
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python >=3.8
+    - setuptools_scm >=5
   run:
-    - astropy
-    - python >=3.6
-    - setuptools
-    - numpy
-    - scipy
-    - matplotlib-base
-    - qtpy
-    - h5py
+    - python >=3.8
+    - numpy >=1.20.0
+    - astropy >=5.2.1
+    - scipy >=1.6
+    - h5py >=3.7
+    - matplotlib-base >=3.3
+    - pyyaml >=5.1
+    - ipython >=7.10.0
+    - qtpy >=1.9
 
 test:
+  requires:
+    - pytest >=6.0.0
   imports:
     - linetools
     - linetools.abund
@@ -60,6 +62,7 @@ test:
     - lt_radec --help
     - lt_solabnd --help
     - lt_get_COS_LP --help
+    - pytest --pyargs {{ name }}
 
 about:
   home: http://linetools.readthedocs.org/
