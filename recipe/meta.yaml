@@ -1,5 +1,5 @@
 {% set name = "linetools" %}
-{% set version = "0.3.1" %}
+{% set version = "0.3.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: d2792647c4451b9d0f83e9d6cf09b59292ad8d97168d366be7d9496094c7c5d2
+  sha256: b0a04f0b5f2c1576e7ef65c5dd8839ad094a392060f156bcde1c980cbe6292da
 
 build:
   noarch: python
