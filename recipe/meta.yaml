@@ -6,12 +6,12 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: d2792647c4451b9d0f83e9d6cf09b59292ad8d97168d366be7d9496094c7c5d2
 
 build:
   noarch: python
-  number: 0
+  number: 1
   entry_points:
     - lt_absline = linetools.scripts.lt_absline:main
     - lt_line = linetools.scripts.lt_line:main
@@ -27,10 +27,10 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.8
+    - python {{ python_min }}
     - setuptools_scm >=5
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - numpy >=1.20.0
     - astropy >=5.2.1
     - scipy >=1.6
@@ -43,6 +43,7 @@ requirements:
 test:
   requires:
     - pytest >=6.0.0
+    - python {{ python_min }}
   imports:
     - linetools
     - linetools.abund
