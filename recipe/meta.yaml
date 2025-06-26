@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: b0a04f0b5f2c1576e7ef65c5dd8839ad094a392060f156bcde1c980cbe6292da
 
 build:
@@ -43,6 +43,7 @@ requirements:
 
 test:
   requires:
+    - python {{ python_min }}
     - pytest >=6.0.0
   imports:
     - linetools
