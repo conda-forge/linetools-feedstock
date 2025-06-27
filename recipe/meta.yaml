@@ -1,13 +1,13 @@
 {% set name = "linetools" %}
-{% set version = "0.3.1" %}
+{% set version = "0.3.2" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: d2792647c4451b9d0f83e9d6cf09b59292ad8d97168d366be7d9496094c7c5d2
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: b0a04f0b5f2c1576e7ef65c5dd8839ad094a392060f156bcde1c980cbe6292da
 
 build:
   noarch: python
@@ -27,22 +27,27 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.8
+    - python {{ python_min }}
+    - setuptools
     - setuptools_scm >=5
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - numpy >=1.20.0
-    - astropy >=5.2.1
+    - astropy-base >=5.2.1
     - scipy >=1.6
     - h5py >=3.7
     - matplotlib-base >=3.3
     - pyyaml >=5.1
     - ipython >=7.10.0
     - qtpy >=1.9
+    - setuptools
+
 
 test:
   requires:
+    - python {{ python_min }}
     - pytest >=6.0.0
+    - setuptools
   imports:
     - linetools
     - linetools.abund
@@ -62,7 +67,6 @@ test:
     - lt_radec --help
     - lt_solabnd --help
     - lt_get_COS_LP --help
-    - pytest --pyargs {{ name }}
 
 about:
   home: http://linetools.readthedocs.org/
