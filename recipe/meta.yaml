@@ -67,7 +67,6 @@ test:
     - lt_radec --help
     - lt_solabnd --help
     - lt_get_COS_LP --help
-    - pytest --pyargs {{ name }}
 
 about:
   home: http://linetools.readthedocs.org/
